@@ -101,134 +101,130 @@
 {"id":100,"firstName":"Lucilia","lastName":"Monketon","email":"lmonketon2r@furl.net","gender":"Female","money":"$4244.38","country":"Indonesia"}]
 
 // Question 1
-// const emails = users.map((user) =>{
-//     return user.email
-// })
-//  console.log(emails);
+const emails = users.map((user) =>{
+    return user.email
+})
+ console.log(emails);
 // -----------------------------------------------------------------------------
 
 // Question 2
-// const filterUsers = users.filter((user) =>{
-//     return user.country == 'Iran'
-// });
-//  const fullName = filterUsers.map((user) =>{
-//    let name = user.firstName + ' ' + user.lastName;
-//    return name
-// })
-// console.log(fullName);
+const filterUsers = users.filter((user) =>{
+    return user.country == 'Iran'
+});
+ const fullName = filterUsers.map((user) =>{
+   let name = user.firstName + ' ' + user.lastName;
+   return name
+})
+console.log(fullName);
 // -----------------------------------------------------------------------------
 
 // Question 3
-// const genderFilter = users.filter((user) =>{
-//     return user.gender !== 'Female' && user.gender !== 'Male'
-// })
-// const moneyUser = genderFilter.map((user) =>{
-//     let name = user.firstName + ' ' + user.lastName
-//     return {name , gender : user.gender , money : user.money}
-// })
-// console.log(moneyUser);
+const genderFilter = users.filter((user) =>{
+    return user.gender !== 'Female' && user.gender !== 'Male'
+})
+const moneyUser = genderFilter.map((user) =>{
+    let name = user.firstName + ' ' + user.lastName
+    return {name , gender : user.gender , money : user.money}
+})
+console.log(moneyUser);
 // -----------------------------------------------------------------------------
 
 // Question 4
-// const userFilter = users.filter((user) =>{
-//     money  = user.money.replace("$","")
-//     money  = Number(money)
-//     return  user.country == 'United States' && money > 1500
-// })
-// const emailUsers = userFilter.map((user) =>{
-//     return user.email
-// })
-// console.log(emailUsers);
+const userFilter = users.filter((user) =>{
+    money  = user.money.replace("$","")
+    money  = Number(money)
+    return  user.country == 'United States' && money > 1500
+})
+const emailUsers = userFilter.map((user) =>{
+    return user.email
+})
+console.log(emailUsers);
 // -----------------------------------------------------------------------------
 // Question 5     
 //  to list users faqat 1 user ba country iran hastesh mn in filter ro baraye keshvar dgeii dar nazar gerftm k beshe sort kard :)
-// const countryFilter = users.filter((user) =>{
-//    return user.country == "United States"
-// });
-// const Money = countryFilter.map((user) =>{
-//     let money  = Number(user.money.replace("$",''))
-//     return money
-// });
-// MoneySort = Money.sort((a,b) => b-a);
-// console.log(MoneySort)
+const countryFilter = users.filter((user) =>{
+   return user.country == "United States"
+});
+const Money = countryFilter.map((user) =>{
+    let money  = user.money.replace("$",'')
+    return money
+});
+MoneySort = Money.sort((a,b) => b-a);
+console.log(MoneySort)
+
 // ---------------------------------------------------------------------------
 
 // Question 6
-// const EmailLength = users.filter((user) =>{
-//     let length = user.email.length >30
-//     return length
-// });
-// const user = EmailLength.map((user) =>{
-//     let name = user.firstName + ' ' + user.lastName
-//     return name
-// })
-// console.log(user)
+const EmailLength = users.filter((user) =>user.email.length >30);
+const user = EmailLength.map((user) => `${user.firstName} ${user.lastName}`);
+console.log(user)
 // --------------------------------------------------------------------------
 
 // Question 7
-// const EmailEnds = users.filter((user) =>{
-//     let ends = user.email.endsWith('.edu')
-//     return ends
-// });
-// const userMoney = EmailEnds.map((user)=>{
-//     return {email: user.email , money: user.money}
-// })
-// console.log(userMoney)
+const EmailEnds = users.filter((user) =>{
+    let ends = user.email.endsWith('.edu')
+    return ends
+});
+const userMoney = EmailEnds.map((user)=>{
+    return {email: user.email , money: user.money}
+})
+console.log(userMoney)
 // ----------------------------------------------------------------------------
 
 // Question 8
-// const SumOfFemales = users.reduce((fix , user)=>{
-//     let female = user.gender === 'Female';
-//     return female + fix
-// },0)
-// console.log(SumOfFemales)
+const CountOfFemales = users.reduce((fix , user)=>{
+    let female = user.gender === 'Female';
+    return female + fix
+    },0);
+
+console.log(CountOfFemales)
+
 // ---------------------------------------------------------------------------
 
 // Question 9
-// const Male = users.filter((user)=>{
-//     return user.gender === 'Male'
-// })
-// const SumOfMoney = Male.reduce((fix , user)=>{
-//     let money =  Number(user.money.replace("$",''))
-//     return money + fix
-// },0)
-// console.log(SumOfMoney)
+const Male = users.filter((user)=>{
+    return user.gender === 'Male'
+})
+const SumOfMoney = Male.reduce((fix , user)=>{
+    let money =  Number(user.money.replace("$",''))
+    return money + fix
+},0)
+console.log(SumOfMoney)
 // ---------------------------------------------------------------------------
 
 // Qusetion 10 
-// const countryFilter = users.filter((user)=>{
-//     return user.country === 'France'
-// })
-// const AvgOfMoney = countryFilter.reduce((fix , user)=>{
-//     let money =  Number(user.money.replace("$",'0'))
-//     return (money + fix)/countryFilter.length
-// },0)
-// console.log(AvgOfMoney)
+const countryfilter = users.filter((user)=>user.country === 'France')
+const AvgOfMoney = countryfilter.reduce((fix , user)=>{
+    let money =  Number(user.money.replace("$",'0'))
+    return (money + fix)/countryFilter.length
+},0)
+console.log(AvgOfMoney)
 // --------------------------------------------------------------------------------
 
 // Question 11
-// const CountryCounts = users.reduce(function(obj, country){
-//     if (!obj[country.country]) {
-//         obj[country.country] = 1;
-//     } else {
-//         obj[country.country]++;
-//     }
-//     return obj;
-// }, {});
-// const GroupByCountry = users.reduce(function (obj, user) {
-//     obj[user.country] = obj[user.country] || [];
-//     obj[user.country].push(user);
-//     return obj;
-// }, Object.create(Object));
+const CountryCounts = users.reduce(function(obj, country){
+    if (!obj[country.country]) {
+        obj[country.country] = 1;
+    } else {
+        obj[country.country]++;
+    }
+    return obj;
+}, {});
+const GroupByCountry = users.reduce(function (obj, user) {
+    obj[user.country] = obj[user.country] || [];
+    obj[user.country].push(user);
+    return obj;
+}, Object.create(Object));
 
-// console.log(GroupByCountry);
+console.log(GroupByCountry);
 // ------------------------------------------------------------------------
 // Question 12
-// const GroupByGender = users.reduce(function (obj, user) {
-//     obj[user.gender] = obj[user.gender] || [];
-//     obj[user.gender].push(user);
-//     return obj;
-// }, Object.create(Object));
+const GroupByGender = users.reduce(function (obj, user) {
+    obj[user.gender] = obj[user.gender] || [];
+    obj[user.gender].push(user);
+    return obj;
+}, Object.create(Object));
 
-// console.log(GroupByGender);
+console.log(GroupByGender);
+
 
